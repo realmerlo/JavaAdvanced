@@ -24,11 +24,12 @@ public class Autoboxing {
 
     public static int sum(int val1, int val2) {
         return val1 + val2;
-    }public static void printChar(char x) {
+    }
+    public static void printChar(char x) {
         System.out.println(x);
-    }public static int sumI(Integer val1, Integer val2) {
-        return val1 + val2;
-    }public static void printC(Character x) {
+    }
+    public static int sumI(Integer val1, Integer val2) {return val1 + val2;}
+    public static void printC(Character x) {
         System.out.println(x);
     }
 }

@@ -10,7 +10,7 @@ public class Exceptions4 {
         System.out.println(Arrays.toString(array));
 
         try {
-            System.out.println(dividerArray(array,9));
+            System.out.println(dividerArray(array,4));
         }
         catch (ArithmeticException e){
             System.out.println("Error: the number cant be divided for 0 " + e);
