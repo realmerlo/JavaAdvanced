@@ -10,32 +10,31 @@ public class Exceptions4 {
         System.out.println(Arrays.toString(array));
 
         try {
-            System.out.println(dividerArray(array,4));
-        }
-        catch (ArithmeticException e){
-            System.out.println("Error: the number cant be divided for 0 " + e);
-        }
-        catch (ArrayIndexOutOfBoundsException e){
-            System.out.println("the position isn't in the array " + e);
+            System.out.println(dividerArray(array, -5, 4));
+        } catch (ArithmeticException | ArrayIndexOutOfBoundsException e) {
+            System.out.println(e);
         }
 
+
     }
-    public static void fillArray (int[] array){
+
+    public static void fillArray(int[] array) {
         Random r = new Random();
-        for(int i = 0; i < array.length;i++){
+        for (int i = 0; i < array.length; i++) {
             array[i] = r.nextInt(20);
         }
     }
-    public static int dividerArray (int[] array, int index) throws ArithmeticException{
-       int output = array[index] / 0;
-       int count = 0;
-       for(int i = 0; i < array.length; i++){
-           count ++;
-           if(count > index){
-               throw new ArrayIndexOutOfBoundsException();
-           }
-       }
-       return output;
+
+    public static int dividerArray(int[] array, int index, int num) {
+        if (array.length < index) {
+            throw new ArrayIndexOutOfBoundsException("Error: index maggiore della lunghezza dell'array");
+        } else if (num == 0) {
+            throw new ArithmeticException("Error: diviso per 0");
+        } else if (index < 0) {
+            throw new ArrayIndexOutOfBoundsException("Error: index negativo coglione");
+        } else {
+            return array[index] / num;
+        }
     }
 }
 //Scrivere una funzione che accetti un array in input e provi a dividere un numero dell'array per 0
